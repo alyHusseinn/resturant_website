@@ -12,11 +12,16 @@
   font-family: "Montserrat", sans-serif;
   text-align: center;
 }
+html{
+    height: 100%;
+    width: 100%;
+}
 body{
     background-color: var(--bg-color);
     color: var(--header-footer);
     height: 100%;
     width: 100%;
+    position: absolute;
 }
 .content{
     background: url('imgs/koharyGood.jpg');
@@ -36,7 +41,8 @@ header{
     background-color: var(--header-footer);
     color: var(--bg-color);
     height: 15vh;
-    border-bottom: 2px solid var(--bg-color);
+    width: 100%;
+    border-bottom: 3px solid rgb(212, 219, 111);
 }
 .logo{
     margin: 1em;
@@ -60,9 +66,15 @@ ul li:hover{
 }
 main{
     color: var(--bg-color);
+    transition: all 300ms linear;
+    width: 100%;
+    height: 80vh;
+    backdrop-filter: blur(3px);
     
 }
+
 .description{
+    margin-top: 10rem;
     display: flex;
     flex-direction: column;
     gap: 5em;
@@ -90,8 +102,28 @@ footer{
     align-items: center;
     text-align: center;
     font-size: 1.5em;
-    border-top: 2px solid var(--bg-color);
+    border-top: 3px solid rgb(212, 219, 111);
 }
 footer p{
     margin-top: .5em;
 }
+
+a{
+    text-decoration: none;
+    color: rgb(212, 219, 111);
+}
+
+#about, #menu {
+    height: 80vh;
+   background-color: rgba(0, 0, 0, 0.356);
+   transition: all 300ms ease-in-out;
+   justify-content: center;
+   align-items: center;
+
+}
+/* #about.description{
+    background-color: #000000;
+} */
+/* #about:nth-child(1), #menu:nth-child(1){
+    background-color: white;
+}  */

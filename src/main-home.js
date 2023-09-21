@@ -8,8 +8,8 @@ const home = () => {
     const descrpHeader = document.createElement('h1');
     const descrpOpenning = document.createElement('p');
 
-    descrpHeader.textContent = 'Egyptian food resturants';
-    descrpOpenning.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quos voluptas illum tenetur culpa tempore facilis at debitis doloribus, ducimus laudantium praesentium et aut rem ea labore maxime molestiae ipsum repellendus ullam! Similique, ut quo.';
+    descrpHeader.textContent = 'Egyptian food resturant';
+    descrpOpenning.textContent = 'Welcome to our restaurant';
 
     descriptionDiv.appendChild(descrpHeader);
     descriptionDiv.appendChild(descrpOpenning);

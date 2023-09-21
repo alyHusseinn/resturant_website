@@ -9,6 +9,7 @@ const LoadPage = () => {
     let main  = home();
     const footer = document.createElement('footer'); 
 
+    // header 
     const nav = document.createElement('nav');
     const logo = document.createElement('h1');
     logo.textContent = 'Egyptian Food';
@@ -18,13 +19,9 @@ const LoadPage = () => {
     const liMenu = document.createElement('li');
     const liAbout = document.createElement('li');
 
-    liHome.setAttribute('data-toggle', 'home');
-    liMenu.setAttribute('data-toggle', 'menu');
-    liAbout.setAttribute('data-toggle', 'about');
-
     liHome.innerHTML = 'Home';
     liMenu.innerHTML = 'Menu';
-    liAbout.innerHTML = 'Content';
+    liAbout.innerHTML = 'About';
     ul.appendChild(liHome);
     ul.appendChild(liMenu);
     ul.appendChild(liAbout);
@@ -35,8 +32,9 @@ const LoadPage = () => {
     header.appendChild(logo);
     header.appendChild(nav);
 
+    // footer
     const madeBy = document.createElement('p');
-    madeBy.textContent = 'Made by Me :)';
+    madeBy.innerHTML = 'Made by <a href="https://github.com/AliHussienabdo"> Me :) </a>';
 
     footer.appendChild(madeBy);
 
@@ -44,30 +42,18 @@ const LoadPage = () => {
     content.appendChild(main);
     content.appendChild(footer);
 
-    liAbout.addEventListener('click',() => {
-        content.removeChild(main);
-        content.removeChild(footer);
-        main = about();
-        content.appendChild(main);
-        content.appendChild(footer);
-    });
+    // listen for any action in toggles buttons
+    liAbout.addEventListener('click', () => refresh(about()));
+    liHome.addEventListener('click', () => refresh(home()));
+    liMenu.addEventListener('click', () => refresh(menu()));
 
-    liHome.addEventListener('click',() => {
+    function refresh (TheMain) {
         content.removeChild(main);
         content.removeChild(footer);
-        main = home();
+        main = TheMain;
         content.appendChild(main);
         content.appendChild(footer);
-    });
-
-    liMenu.addEventListener('click',() => {
-        content.removeChild(main);
-        content.removeChild(footer);
-        main = menu();
-        content.appendChild(main);
-        content.appendChild(footer);
-    });
+    }
 }
-
 
 export default LoadPage;
